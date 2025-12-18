@@ -24,7 +24,7 @@ data "aws_security_group" "testify_sg" {
 }
 
 resource "aws_instance" "sample_instance" {
-  ami              = var.ami
+  ami              = var.ami["ubuntu"]
   key_name         = var.key_name
   instance_type    = var.instance_typ
   user_data_base64 = filebase64("./docker_automation.sh")

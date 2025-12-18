@@ -1,6 +1,10 @@
 variable "ami" {
-  type    = string
-  default = "ami-0ecb62995f68bb549"
+  type = map(string)
+  # default = "ami-0ecb62995f68bb549"
+  default = {
+    "windows" = "ami-06777e7ef7441deff"
+    "ubuntu"  = "ami-0ecb62995f68bb549"
+  }
 }
 
 variable "key_name" {
