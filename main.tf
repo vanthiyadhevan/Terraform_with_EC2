@@ -34,6 +34,11 @@ resource "aws_instance" "sample_instance" {
   subnet_id              = data.aws_subnet.default_subnet.id
   vpc_security_group_ids = [data.aws_security_group.testify_sg.id]
 
+  root_block_device {
+    volume_size = var.vol_size[0]
+    volume_type = var.vol_typ
+  }
+
   tags = {
     Name = var.name_of_instance
   }

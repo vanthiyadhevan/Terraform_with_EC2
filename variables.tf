@@ -21,3 +21,13 @@ variable "name_of_instance" {
   type    = string
   default = "Testing-Instance"
 }
+
+variable "vol_size" {
+  type    = list(number)
+  default = [30, 15, 50, 10]
+}
+
+variable "vol_typ" {
+  type    = string
+  default = "gp3"
+}
