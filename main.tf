@@ -26,7 +26,7 @@ data "aws_security_group" "testify_sg" {
 resource "aws_instance" "sample_instance" {
   ami              = var.ami["ubuntu"]
   key_name         = var.key_name
-  instance_type    = var.instance_typ
+  instance_type    = var.instance_typ["small"]
   user_data_base64 = filebase64("./docker_automation.sh")
 
   associate_public_ip_address = true
@@ -35,7 +35,7 @@ resource "aws_instance" "sample_instance" {
   vpc_security_group_ids = [data.aws_security_group.testify_sg.id]
 
   root_block_device {
-    volume_size = var.vol_size[0]
+    volume_size = var.vol_size["50"]
     volume_type = var.vol_typ
   }
 

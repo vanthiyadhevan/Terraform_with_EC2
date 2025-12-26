@@ -7,7 +7,7 @@ output "default_subnets" {
 }
 
 output "security_group" {
-  value = data.aws_security_group.testify_sg.id
+  value = data.aws_security_group.testify_sg.name
 }
 
 output "instance_id" {
