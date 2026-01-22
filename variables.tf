@@ -21,6 +21,7 @@ variable "instance_typ" {
     "micro"  = "t3.micro"
     "small"  = "t3.small"
     "medium" = "t3.medium"
+    "large"  = "t3.large"
   }
   description = "t3.micro has 2 CPU and 1GiB Memory, t3.small 2CPU and 2GiB, t3.medium 2CPU and 4GiB"
 }
